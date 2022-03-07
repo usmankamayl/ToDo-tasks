@@ -1,4 +1,4 @@
-export let dataKey = prompt('Введите ключ');
+export let dataKey = prompt('Введите ключ или воспользуйтесь стандартным ключом key') || 'key';
 
 export const getStorage = (dataKey) => {
     return JSON.parse(localStorage.getItem(dataKey)) || [];
@@ -13,6 +13,7 @@ export const  removeStorage = (id) => {
     tasks.forEach((obj, index) => {
         if (obj.id === id) {
             tasks.splice(index, 1);
+            obj.number = index + 1;
         }
 
     })

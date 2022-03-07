@@ -1,5 +1,6 @@
 import elements from "./cteateElements.js";
 import {getStorage, dataKey} from "./serveceStorage.js";
+import {addNumberToStorage} from "./addNumber.js";
 const {
     createTable,
     createTitle,
@@ -21,11 +22,10 @@ export const renderTodoApp = (app, title) => {
     }
 }
 
-
 export const renderTasks = (elem) => {
+    addNumberToStorage();
     const tasks = getStorage(dataKey);
     tasks.forEach(task => {
         elem.append(createRow(task));
     });
-
 };

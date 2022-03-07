@@ -45,12 +45,24 @@ const createTable = () => {
 
 const createRow = (obj) => {
     const tr = document.createElement('tr');
-    tr.classList.add('table-light');
+    if (obj.status === 'В процессе') {
+        tr.classList.add('table-light');
+    }
+
+    if (obj.status === 'Выполнена') {
+        tr.classList.add('table-success');
+    }
     tr.dataset.id = obj.id;
     const tdNumber = document.createElement('td');
+    tdNumber.classList.add('number');
     tdNumber.textContent = obj.number;
     const tdDesc = document.createElement('td');
-    tdDesc.classList.add('task');
+    if (obj.status === 'В процессе') {
+        tdDesc.classList.add('task');
+    }
+    if (obj.status === 'Выполнена') {
+        tdDesc.classList.add('text-decoration-line-through');
+    }
     tdDesc.textContent = obj.task;
     const tdStatus = document.createElement('td');
     tdStatus.textContent = obj.status;
@@ -61,9 +73,13 @@ const createRow = (obj) => {
     const button2 = document.createElement('button');
     button2.classList.add('btn', 'btn-success');
     button2.textContent = 'Завершить';
+    if (obj.status === 'Выполнена') {
+        button2.disabled = true;
+    }
     tdBtns.append(button1, button2);
     tr.append(tdNumber, tdDesc, tdStatus, tdBtns);
     return tr;
+
 };
 
 

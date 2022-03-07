@@ -4,9 +4,6 @@ const {
     createRow,
 } = elements;
 
-
-
-
 export const addTask = () => {
     const form = document.querySelector('form');
     const btnSaved = form.querySelector('.btn-primary');
