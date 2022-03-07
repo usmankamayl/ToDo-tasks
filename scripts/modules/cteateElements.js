@@ -39,9 +39,7 @@ const createTable = () => {
           </tr>`)
     const tbody = document.createElement('tbody')
     table.append(thead, tbody);
-    //table.tbody = tbody;
     tableWrapper.append(table);
-    //tableWrapper.style.width = '500px';
     return {tableWrapper, table, tbody};
 };
 
@@ -59,11 +57,9 @@ const createRow = (obj) => {
     const tdBtns = document.createElement('td');
     const button1 = document.createElement('button');
     button1.classList.add('btn', 'btn-danger', 'me-3');
-    //button1.setAttribute('type', 'button');
     button1.textContent = 'Удалить';
     const button2 = document.createElement('button');
     button2.classList.add('btn', 'btn-success');
-    //button2.setAttribute('type', 'button');
     button2.textContent = 'Завершить';
     tdBtns.append(button1, button2);
     tr.append(tdNumber, tdDesc, tdStatus, tdBtns);

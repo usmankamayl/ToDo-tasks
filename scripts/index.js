@@ -1,18 +1,7 @@
-//import elements from './modules/cteateElements.js'
 import {renderTodoApp} from "./modules/render.js";
 import {addTask} from "./modules/addTask.js";
 import {removeTask} from "./modules/removeTask.js";
 import {completedTask} from "./modules/completedTask.js";
-import {dataKey} from "./modules/serveceStorage.js";
-//const {createContainer, createButtonsGroup, createForm, createTable, createRow, createTitle} = elements;
-
-
-
-// createTitle();
-// createForm();
-// createTable();
-
-
 
 const init = (selector, title) => {
     const app = document.querySelector(selector);

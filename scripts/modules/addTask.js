@@ -1,7 +1,6 @@
 import elements from "./cteateElements.js";
 import {getStorage, setStorage, dataKey} from "./serveceStorage.js";
 const {
-    createTable,
     createRow,
 } = elements;
 
