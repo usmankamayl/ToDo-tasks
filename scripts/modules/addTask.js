@@ -8,7 +8,7 @@ export const addTask = () => {
     const form = document.querySelector('form');
     const btnSaved = form.querySelector('.btn-primary');
     const btnReset = form.querySelector('.btn-warning');
-    const tasks = getStorage('usman');
+    const tasks = getStorage(dataKey);
     form.input.addEventListener('input', () => {
         if (form.input.value.trim().length > 3) {
             btnSaved.removeAttribute('disabled');
